@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1C87753-E253-40A3-927A-5352870EC514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Domain", "src\GymTracker.Domain\GymTracker.Domain.csproj", "{80EC5687-E430-414B-A637-0CC1B5414062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Application", "src\GymTracker.Application\GymTracker.Application.csproj", "{55B7D110-FFC5-4CF0-82B2-BD3854721869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Infrastructure", "src\GymTracker.Infrastructure\GymTracker.Infrastructure.csproj", "{AB20E620-0BE7-428E-9295-1337765D62B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Api", "src\GymTracker.Api\GymTracker.Api.csproj", "{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80EC5687-E430-414B-A637-0CC1B5414062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80EC5687-E430-414B-A637-0CC1B5414062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80EC5687-E430-414B-A637-0CC1B5414062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80EC5687-E430-414B-A637-0CC1B5414062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B7D110-FFC5-4CF0-82B2-BD3854721869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B7D110-FFC5-4CF0-82B2-BD3854721869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B7D110-FFC5-4CF0-82B2-BD3854721869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B7D110-FFC5-4CF0-82B2-BD3854721869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB20E620-0BE7-428E-9295-1337765D62B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB20E620-0BE7-428E-9295-1337765D62B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB20E620-0BE7-428E-9295-1337765D62B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB20E620-0BE7-428E-9295-1337765D62B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80EC5687-E430-414B-A637-0CC1B5414062} = {A1C87753-E253-40A3-927A-5352870EC514}
+		{55B7D110-FFC5-4CF0-82B2-BD3854721869} = {A1C87753-E253-40A3-927A-5352870EC514}
+		{AB20E620-0BE7-428E-9295-1337765D62B1} = {A1C87753-E253-40A3-927A-5352870EC514}
+		{288BFAD3-78CB-4BA4-ABB1-268A2803CB4A} = {A1C87753-E253-40A3-927A-5352870EC514}
+	EndGlobalSection
+EndGlobal

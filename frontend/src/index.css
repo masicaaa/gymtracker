@@ -1,0 +1,484 @@
+:root {
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-text: #1f2328;
+  --color-muted: #6b7280;
+  --color-primary: #2f6f4e;
+  --color-primary-dark: #255840;
+  --color-border: #d8dbe0;
+  --color-error: #b3261e;
+  --radius: 10px;
+
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.card h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.card .subtitle {
+  margin: 0 0 24px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--color-surface);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -1px;
+}
+
+.field .field-error {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-error);
+  font-size: 13px;
+}
+
+.field input.has-error,
+.field select.has-error {
+  border-color: var(--color-error);
+}
+
+.button-primary {
+  width: 100%;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.alert-error {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-error);
+  border-radius: 8px;
+  background: #fdecea;
+  color: var(--color-error);
+  font-size: 14px;
+}
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.form-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-header .brand {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.app-header .user-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.button-link {
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.app-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* ---------- header navigation ---------- */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.main-nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ---------- page title row ---------- */
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.button-primary.compact {
+  width: auto;
+  padding: 9px 18px;
+}
+
+.button-secondary {
+  padding: 11px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-secondary:hover {
+  background: var(--color-bg);
+}
+
+.button-link.danger {
+  color: var(--color-error);
+}
+
+/* ---------- workout form ---------- */
+
+.workout-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 24px 24px;
+  margin-bottom: 24px;
+}
+
+.workout-form h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 20px;
+}
+
+.workout-form input[type="range"] {
+  padding: 0;
+  accent-color: var(--color-primary);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.form-actions .button-primary {
+  width: auto;
+  padding: 11px 22px;
+}
+
+/* ---------- workout list ---------- */
+
+.empty-state {
+  color: var(--color-muted);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+}
+
+.workout-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workout-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+.workout-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.workout-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+}
+
+.workout-type {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.workout-date {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.workout-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 0;
+}
+
+.workout-stats dt {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2px;
+}
+
+.workout-stats dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.workout-notes {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-muted);
+  white-space: pre-wrap;
+}
+
+.workout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .workout-item {
+    flex-direction: column;
+  }
+
+  .workout-actions {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+/* ---------- progress page ---------- */
+
+.month-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.month-picker input {
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.month-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  margin: 0 0 20px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.month-summary > div {
+  background: var(--color-surface);
+  padding: 14px 16px 16px;
+}
+
+.month-summary dt {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+.month-summary dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.progress-table th,
+.progress-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.progress-table thead th {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.progress-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.progress-table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-table tbody .numeric {
+  font-weight: 600;
+}
+
+.progress-table .period {
+  color: var(--color-muted);
+}
+
+.progress-table tr.is-empty td {
+  color: var(--color-muted);
+  font-weight: 400;
+}

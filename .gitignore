@@ -1,0 +1,24 @@
+# ---- .NET ----
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# ---- Node / React ----
+node_modules/
+dist/
+build/
+
+# ---- Environment & secrets ----
+# .env holds only the API address and is committed on purpose (Vite convention).
+# Anything secret goes into .env.local, which is not.
+.env.local
+.env.*.local
+appsettings.Development.json
+
+# ---- Editors / OS ----
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
