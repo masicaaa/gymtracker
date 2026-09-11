@@ -58,6 +58,12 @@ mjestu, kroz `AddApplication()` i `AddInfrastructure()`.
 
 **Preduslovi:** .NET 8 SDK, Node.js 20+, MySQL 8 na portu 3306.
 
+Za migracije treba i EF Core alat, ako ga već nemate:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
 ### 1. Baza
 
 ```sql

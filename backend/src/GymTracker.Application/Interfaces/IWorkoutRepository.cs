@@ -4,7 +4,7 @@ namespace GymTracker.Application.Interfaces;
 
 public interface IWorkoutRepository
 {
-    // Ownership is part of the lookup, so another user's workout simply cannot be found.
+    // userId is part of the lookup, so someone else's workout just isn't found
     Task<Workout?> GetByIdAsync(Guid id, Guid userId, CancellationToken cancellationToken = default);
 
     Task<IReadOnlyList<Workout>> GetForUserAsync(

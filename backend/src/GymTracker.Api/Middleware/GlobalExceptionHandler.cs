@@ -19,7 +19,6 @@ public class GlobalExceptionHandler : IExceptionHandler
         Exception exception,
         CancellationToken cancellationToken)
     {
-        // Validation failures carry a list of field errors, so they get their own shape.
         if (exception is ValidationException validationException)
         {
             var errors = validationException.Errors

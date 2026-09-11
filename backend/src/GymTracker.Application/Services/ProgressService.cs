@@ -7,7 +7,6 @@ namespace GymTracker.Application.Services;
 
 public class ProgressService : IProgressService
 {
-    // Monday, as in ISO 8601 and as people here count weeks.
     private const DayOfWeek FirstDayOfWeek = DayOfWeek.Monday;
 
     private readonly IWorkoutRepository _workoutRepository;
@@ -31,7 +30,7 @@ public class ProgressService : IProgressService
         await _validator.ValidateAndThrowAsync(request, cancellationToken);
 
         var monthStart = new DateTime(request.Year, request.Month, 1);
-        var monthEnd = monthStart.AddMonths(1); // exclusive: the 1st of the next month
+        var monthEnd = monthStart.AddMonths(1);
 
         var workouts = await _workoutRepository.GetForUserAsync(
             _currentUser.UserId,
@@ -50,8 +49,6 @@ public class ProgressService : IProgressService
             weeks);
     }
 
-    // Walks the month week by week, cutting every week to the month:
-    // a week running from the previous month starts on the 1st instead.
     private static List<WeekSummaryDto> BuildWeeks(
         DateTime monthStart,
         DateTime monthEnd,
@@ -74,7 +71,7 @@ public class ProgressService : IProgressService
             weeks.Add(new WeekSummaryDto(
                 WeekNumber: weekNumber,
                 StartDate: segmentStart,
-                EndDate: segmentEnd.AddDays(-1), // last day that belongs to this week
+                EndDate: segmentEnd.AddDays(-1),
                 WorkoutCount: inSegment.Count,
                 TotalDurationMinutes: inSegment.Sum(w => w.DurationMinutes),
                 TotalCaloriesBurned: inSegment.Sum(w => w.CaloriesBurned),
@@ -101,7 +98,7 @@ public class ProgressService : IProgressService
         return date.Date.AddDays(daysUntilNext);
     }
 
-    // Null, not zero: zero would read as "very easy workouts" instead of "no workouts".
+    // null and not 0 - a 0 here would read as "very easy workouts"
     private static double? Average(IReadOnlyCollection<Workout> workouts, Func<Workout, int> selector)
     {
         if (workouts.Count == 0)

@@ -5,8 +5,7 @@ namespace GymTracker.Application.Validators;
 
 public class LoginRequestValidator : AbstractValidator<LoginRequest>
 {
-    // Deliberately no format or length rules here: sign-in must not hint
-    // at what a valid password looks like. Only "you left it empty".
+    // no format rules on purpose - login shouldn't hint what a valid password looks like
     public LoginRequestValidator()
     {
         RuleFor(x => x.Email)

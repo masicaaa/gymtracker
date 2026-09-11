@@ -12,7 +12,6 @@ export default function App() {
       <Route path="/prijava" element={<LoginPage />} />
       <Route path="/registracija" element={<RegisterPage />} />
 
-      {/* Everything below requires a signed-in user. */}
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<WorkoutsPage />} />

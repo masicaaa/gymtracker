@@ -7,7 +7,7 @@ namespace GymTracker.Api.Controllers;
 
 [ApiController]
 [Route("api/workouts")]
-[Authorize] // Every endpoint below requires a valid token.
+[Authorize]
 public class WorkoutsController : ControllerBase
 {
     private readonly IWorkoutService _workoutService;
@@ -41,7 +41,6 @@ public class WorkoutsController : ControllerBase
     {
         var workout = await _workoutService.CreateAsync(request, cancellationToken);
 
-        // 201 Created, with the address of the new workout in the Location header.
         return CreatedAtAction(nameof(GetById), new { id = workout.Id }, workout);
     }
 

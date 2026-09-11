@@ -16,7 +16,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(256);
 
-        // One account per e-mail address, enforced by the database and not only by code.
         builder.HasIndex(u => u.Email)
             .IsUnique();
 

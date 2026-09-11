@@ -29,7 +29,6 @@ export default function LoginPage() {
     try {
       await login(form);
 
-      // Back to the page the user originally asked for, or the home page.
       const target = location.state?.from?.pathname ?? "/";
       navigate(target, { replace: true });
     } catch (error) {

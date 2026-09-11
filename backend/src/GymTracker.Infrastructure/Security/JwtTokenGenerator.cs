@@ -19,8 +19,6 @@ public class JwtTokenGenerator : ITokenGenerator
 
     public string GenerateToken(User user)
     {
-        // Claims are the facts about the user carried inside the token.
-        // Only what the API needs later - never anything sensitive.
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),

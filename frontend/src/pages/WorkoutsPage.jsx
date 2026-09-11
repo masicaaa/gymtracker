@@ -7,14 +7,15 @@ export default function WorkoutsPage() {
   const [workouts, setWorkouts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
+  const [actionError, setActionError] = useState("");
 
-  // null = form closed, {} = adding, a workout = editing that one
   const [editing, setEditing] = useState(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const load = useCallback(async () => {
     setIsLoading(true);
     setLoadError("");
+    setActionError("");
 
     try {
       setWorkouts(await workoutApi.getAll());
@@ -56,7 +57,7 @@ export default function WorkoutsPage() {
       await workoutApi.remove(workout.id);
       await load();
     } catch {
-      setLoadError("Trening nije moguće obrisati. Pokušajte ponovo.");
+      setActionError("Trening nije moguće obrisati. Pokušajte ponovo.");
     }
   };
 
@@ -90,6 +91,7 @@ export default function WorkoutsPage() {
 
       {isLoading && <p className="empty-state">Učitavanje...</p>}
       {loadError && <div className="alert-error">{loadError}</div>}
+      {actionError && <div className="alert-error">{actionError}</div>}
 
       {!isLoading && !loadError && (
         <WorkoutList

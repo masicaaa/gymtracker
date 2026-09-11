@@ -12,7 +12,7 @@ public class WorkoutRequestValidator : AbstractValidator<WorkoutRequest>
 
         RuleFor(x => x.PerformedAt)
             .NotEmpty().WithMessage("Datum i vrijeme treninga su obavezni.")
-            // Five minutes of slack: the user's clock is never exactly the server's.
+            // 5 min slack - the user's clock is never exactly the server's
             .LessThanOrEqualTo(_ => DateTime.Now.AddMinutes(5))
             .WithMessage("Trening ne može biti u budućnosti.");
 

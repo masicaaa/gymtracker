@@ -63,7 +63,7 @@ public class AuthService : IAuthService
 
         var user = await _userRepository.GetByEmailAsync(email, cancellationToken);
 
-        // The same error for an unknown e-mail and a wrong password,
+        // The same error for an unknown email and a wrong password,
         // so the response never reveals which accounts exist.
         if (user is null || !_passwordHasher.Verify(request.Password, user.PasswordHash))
         {

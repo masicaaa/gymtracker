@@ -1,6 +1,6 @@
 namespace GymTracker.Domain.Enums;
 
-// Stored as an int, so existing values must never be renumbered.
+// stored as int - don't renumber, the db has the old values
 public enum ExerciseType
 {
     Cardio = 1,

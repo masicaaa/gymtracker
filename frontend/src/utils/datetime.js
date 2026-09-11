@@ -11,7 +11,6 @@ export function toInputValue(date) {
   );
 }
 
-/** Cuts an API value like "2026-09-08T18:00:00" down to what the input expects. */
 export function apiValueToInput(value) {
   return value ? value.slice(0, 16) : "";
 }
@@ -38,7 +37,6 @@ export function formatDuration(minutes) {
   return `${hours} h ${rest} min`;
 }
 
-/** "2026-09-01T00:00:00" -> "01.09." */
 export function formatDayMonth(value) {
   const date = new Date(value);
   const pad = (number) => String(number).padStart(2, "0");

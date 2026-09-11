@@ -18,8 +18,6 @@ public class GymTrackerDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Picks up every IEntityTypeConfiguration in this assembly,
-        // so a new entity only needs its own configuration file.
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(GymTrackerDbContext).Assembly);
     }
 }

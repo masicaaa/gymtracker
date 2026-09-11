@@ -19,7 +19,6 @@ public class CurrentUserService : ICurrentUserService
         {
             var user = _httpContextAccessor.HttpContext?.User;
 
-            // ASP.NET renames "sub" to ClaimTypes.NameIdentifier while validating the token.
             var value = user?.FindFirstValue(ClaimTypes.NameIdentifier)
                         ?? user?.FindFirstValue(JwtRegisteredClaimNames.Sub);
 

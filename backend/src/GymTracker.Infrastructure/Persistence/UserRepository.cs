@@ -15,8 +15,6 @@ public class UserRepository : IUserRepository
 
     public Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken = default)
     {
-        // AsNoTracking: the user is only read here, never modified,
-        // so EF does not need to keep track of it.
         return _context.Users
             .AsNoTracking()
             .FirstOrDefaultAsync(u => u.Email == email, cancellationToken);

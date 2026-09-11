@@ -24,15 +24,11 @@ public static class DependencyInjection
         services.AddDbContext<GymTrackerDbContext>(options =>
             options.UseMySql(connectionString, serverVersion));
 
-        // Contract (Application) -> implementation (Infrastructure).
-        // Scoped: one instance per HTTP request, matching the DbContext lifetime.
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 
-        // Reads the "Jwt" section of appsettings into JwtOptions once, at startup.
         services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
 
-        // Stateless helpers: one shared instance is enough.
         services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
         services.AddSingleton<ITokenGenerator, JwtTokenGenerator>();
 

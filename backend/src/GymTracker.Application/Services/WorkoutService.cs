@@ -90,7 +90,6 @@ public class WorkoutService : IWorkoutService
         await _workoutRepository.DeleteAsync(workout, cancellationToken);
     }
 
-    // The single place ownership is checked - used by get, update and delete.
     private async Task<Workout> FindOwnedWorkoutAsync(Guid id, CancellationToken cancellationToken)
     {
         var workout = await _workoutRepository.GetByIdAsync(id, _currentUser.UserId, cancellationToken);

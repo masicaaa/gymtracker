@@ -3,17 +3,14 @@ import { progressApi } from "../api/progressApi";
 import { toFormError } from "../api/client";
 import { currentMonthValue, formatDayMonth, formatDuration } from "../utils/datetime";
 
-/** The month input reports every keystroke, so "2026-0" arrives while still typing. */
 const COMPLETE_MONTH = /^\d{4}-(0[1-9]|1[0-2])$/;
 
-/** "2026-09" -> { year: 2026, month: 9 } */
 function splitMonthValue(value) {
   const [year, month] = value.split("-");
 
   return { year: Number(year), month: Number(month) };
 }
 
-/** Averages are null for a week without workouts - there is nothing to average. */
 function formatAverage(value) {
   return value === null ? "—" : value.toFixed(1);
 }
@@ -25,7 +22,6 @@ export default function ProgressPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Half-typed value: wait for the rest instead of asking for month 0.
     if (!COMPLETE_MONTH.test(monthValue)) {
       setIsLoading(false);
       return undefined;
@@ -52,7 +48,6 @@ export default function ProgressPage() {
         if (!ignore) setIsLoading(false);
       });
 
-    // Guards against an older, slower response overwriting a newer one.
     return () => {
       ignore = true;
     };

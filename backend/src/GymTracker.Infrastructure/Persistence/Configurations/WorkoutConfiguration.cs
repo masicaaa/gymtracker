@@ -10,7 +10,6 @@ public class WorkoutConfiguration : IEntityTypeConfiguration<Workout>
     {
         builder.ToTable("workouts", t =>
         {
-            // Last line of defence: even a manual INSERT cannot store an invalid scale value.
             t.HasCheckConstraint("ck_workouts_intensity", "`Intensity` BETWEEN 1 AND 10");
             t.HasCheckConstraint("ck_workouts_fatigue", "`Fatigue` BETWEEN 1 AND 10");
             t.HasCheckConstraint("ck_workouts_duration", "`DurationMinutes` > 0");
@@ -33,8 +32,6 @@ public class WorkoutConfiguration : IEntityTypeConfiguration<Workout>
             .HasForeignKey(w => w.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Every screen asks "this user's workouts, in this date range",
-        // so the index matches that query exactly.
         builder.HasIndex(w => new { w.UserId, w.PerformedAt });
     }
 }

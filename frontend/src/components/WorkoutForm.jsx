@@ -28,7 +28,6 @@ function toForm(workout) {
   };
 }
 
-// Used for both adding and editing - the difference is only whether a workout is passed in.
 export default function WorkoutForm({ workout, onSave, onCancel }) {
   const isEditing = Boolean(workout);
 

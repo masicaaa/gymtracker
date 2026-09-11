@@ -16,10 +16,8 @@ public class Workout
 
     public int CaloriesBurned { get; set; }
 
-    // 1-10, how hard the workout was for an average person.
     public int Intensity { get; set; }
 
-    // 1-10, how tired the user felt afterwards.
     public int Fatigue { get; set; }
 
     public string? Notes { get; set; }
