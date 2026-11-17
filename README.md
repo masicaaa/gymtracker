@@ -27,6 +27,7 @@ Svaki korisnik vidi isključivo svoje treninge.
 | Backend | .NET 8, ASP.NET Core Web API, EF Core 8 (Pomelo MySQL) |
 | Sigurnost | JWT (Bearer), BCrypt |
 | Validacija | FluentValidation |
+| Testovi | xUnit |
 | Baza | MySQL 8 |
 | Frontend | React 19, Vite, React Router, `fetch` |
 
@@ -100,6 +101,30 @@ npm run dev
 Aplikacija: `http://localhost:5173`
 
 **Backend se pokreće prvi** — frontend bez njega ne može dohvatiti podatke.
+
+---
+
+## Testovi
+
+```bash
+cd backend
+dotnet test
+```
+
+Za testove ne treba ni pokrenuta baza ni server — svih pet traje desetak milisekundi.
+
+Pokriven je `ProgressService`, jer je dijeljenje mjeseca na sedmice jedini dio projekta
+u kojem postoji pravi algoritam. Testovi gađaju granice, a ne sretan slučaj: mjesec koji
+počinje usred sedmice, mjesec koji počinje u ponedjeljak, trening unesen tačno u ponoć na
+granici dvije sedmice, i sedmica bez treninga u kojoj prosjek mora ostati `null`. Jedan
+test poredi zbir po sedmicama sa zbirom cijelog mjeseca, da se nijedan trening ne izgubi
+ni ne prebroji dvaput.
+
+Umjesto repozitorijuma ubacujem implementaciju koja drži listu u memoriji — moguće je
+jer servis zavisi od `IWorkoutRepository`, a ne od EF-a.
+
+Repozitorijume i kontrolere namjerno nisam pokrivala unit testovima. Nad njima bih pisala
+integracione testove s test bazom, jer bi unit test tu provjeravao EF, a ne moj kod.
 
 ---
 
